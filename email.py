@@ -1,6 +1,6 @@
-FILE_NAME = "phrases.txt"
+PHRASE_FILE = "phrases.txt"
 
-with open(FILE_NAME) as f:
+with open(PHRASE_FILE) as f:
     lines = f.read().splitlines()
 
 print(len(lines))
