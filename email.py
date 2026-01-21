@@ -7,3 +7,6 @@ with open(PHRASE_FILE) as f:
     lines = f.read().splitlines()
 
 print(len(lines))
+with open(AUTH_FILE) as af:
+    auth = json.load(af)
+
