@@ -1,0 +1,28 @@
+import json
+from email.message import EmailMessage
+import smtplib
+
+PHRASE_FILE = "phrases.txt"
+AUTH_FILE = "auth.json"
+
+with open(PHRASE_FILE) as f:
+    lines = f.read().splitlines()
+
+with open(AUTH_FILE) as af:
+    auth = json.load(af)
+
+# try sending an email
+msg = EmailMessage()
+msg["Subject"] = "Test Email"
+msg["From"] = auth["email"]
+msg["To"] = auth["to"]
+msg.set_content("This is a test email sent via Python.")
+
+# Send the email securely:
+
+with smtplib.SMTP(auth["outgoing_server"], auth["outgoing_port"]) as server:
+    # server.ehlo()
+    server.starttls()
+    # server.ehlo()
+    server.login(auth["email"], auth["password"])
+    server.send_message(msg)
