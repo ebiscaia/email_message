@@ -18,8 +18,8 @@ msg["From"] = auth["email"]
 msg["To"] = auth["to"]
 msg.set_content("This is a test email sent via Python.")
 
-# Send the email securely:
 
+# Send the email securely (works with iCloud and Gmail):
 with smtplib.SMTP(auth["outgoing_server"], auth["outgoing_port"]) as server:
     # server.ehlo()
     server.starttls()
