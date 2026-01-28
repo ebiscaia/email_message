@@ -12,14 +12,4 @@
     "outgoing_port": 587,
     "ssl": true
 }
-{
-    "service": "Gmail",
-    "from": "<your-name>",
-    "to": "recepient-email>",
-    "email": "<your-email>",                         // your full email address
-    "password": "<your-password>",                   // your in-app password 
-    "outgoing_server": "smtp.gmail.com",
-    "outgoing_port": 465,
-    "ssl": true
-}
 }
