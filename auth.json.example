@@ -22,14 +22,4 @@
     "outgoing_port": 465,
     "ssl": true
 }
-{
-    "service": "Office365",
-    "from": "<your-name>",
-    "to": "recepient-email>",
-    "email": "<your-email>",                         // your full email address
-    "password": "<your-password>",                   // your in-app password 
-    "outgoing_server": "smtp.office365.com
-",
-    "outgoing_port": 587,
-    "tls": true
 }
