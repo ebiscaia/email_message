@@ -3,7 +3,6 @@
 // Edit internal block where words are surrounded by "< >" symbols
 
 {
-    "service": "iCloud",
     "from": "<your-name>",
     "to": "recepient-email>",
     "email": "<your-email>",                         // your full email address
