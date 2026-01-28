@@ -3,10 +3,9 @@
 // Edit internal block where words are surrounded by "< >" symbols
 
 {
-    "to": "recepient-email>",
     "email": "<your-email>",                         // your full email address
     "password": "<your-password>",                   // your in-app password 
-    "outgoing_server": "smtp.mail.me.com",
-    "outgoing_port": 587,
-}
+    "to": "<recepient-email>",                       // email of whom will receive the email
+    "outgoing_server": "<smtp-server>",
+    "outgoing_port": 587
 }
