@@ -24,6 +24,9 @@ msg.set_content("This is a test email sent via Python.")
 languages = lines[0].split("|")
 phrases = lines[1:]
 
+# Get a random phrase and separate the original part and its translation
+phrase = phrases[random.randint(0, len(phrases) - 1)].split("|")
+
 # Send the email securely (works with iCloud and Gmail):
 with smtplib.SMTP(auth["outgoing_server"], auth["outgoing_port"]) as server:
     server.starttls()
