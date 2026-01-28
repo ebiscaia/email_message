@@ -1,6 +1,9 @@
 // Copy/rename this file to auth.json
-// Edit auth.json leaving just one block
-// Edit internal block where words are surrounded by "< >" symbols
+// This works with either Gmail or iCloud
+// Remove all the lines before '{'
+// and inline comments (everything after the ',')
+// Edit internal blocks where words are surrounded by "< >" symbols
+// Check how to create in-app passwords for Gmail or iCloud
 
 {
     "email": "<your-email>",                         // your full email address
