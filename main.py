@@ -1,7 +1,8 @@
 import json
-from email.message import EmailMessage
 import smtplib
 import random
+
+from email.message import EmailMessage
 
 PHRASE_FILE = "phrases.txt"
 AUTH_FILE = "auth.json"
