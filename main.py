@@ -6,6 +6,7 @@ from email.message import EmailMessage
 
 PHRASE_FILE = "phrases.txt"
 AUTH_FILE = "auth.json"
+message = ""
 
 with open(PHRASE_FILE) as f:
     lines = f.read().splitlines()
