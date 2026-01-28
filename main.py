@@ -26,6 +26,14 @@ message = f"""Phrase of the day
 {languages[0]}: {phrase[0]}
 {languages[1]}: {phrase[1]}"""
 
+# Check the lenght of phrases array and add a warning to the main message
+if len(phrases) == 1:
+    message += """
+ 
+This is the last phrase of the file. Generate a new version of the file,
+otherwise this program will fail next time.
+    """
+
 # try sending an email
 msg = EmailMessage()
 msg["Subject"] = "Test Email"
