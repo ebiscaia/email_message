@@ -19,6 +19,7 @@ msg["Subject"] = "Test Email"
 msg["From"] = auth["email"]
 msg["To"] = auth["to"]
 msg.set_content("This is a test email sent via Python.")
+
 # Associate the lines of the PHRASE_FILE to variables of languages and phrases
 languages = lines[0].split("|")
 phrases = lines[1:]
