@@ -1,35 +1,14 @@
 // Copy/rename this file to auth.json
-// Edit auth.json leaving just one block
-// Edit internal block where words are surrounded by "< >" symbols
+// This works with either Gmail or iCloud
+// Remove all the lines before '{'
+// and inline comments (everything after the ',')
+// Edit internal blocks where words are surrounded by "< >" symbols
+// Check how to create in-app passwords for Gmail or iCloud
 
 {
-    "service": "iCloud",
-    "from": "<your-name>",
-    "to": "recepient-email>",
     "email": "<your-email>",                         // your full email address
     "password": "<your-password>",                   // your in-app password 
-    "outgoing_server": "smtp.mail.me.com",
-    "outgoing_port": 587,
-    "ssl": true
-}
-{
-    "service": "Gmail",
-    "from": "<your-name>",
-    "to": "recepient-email>",
-    "email": "<your-email>",                         // your full email address
-    "password": "<your-password>",                   // your in-app password 
-    "outgoing_server": "smtp.gmail.com",
-    "outgoing_port": 465,
-    "ssl": true
-}
-{
-    "service": "Office365",
-    "from": "<your-name>",
-    "to": "recepient-email>",
-    "email": "<your-email>",                         // your full email address
-    "password": "<your-password>",                   // your in-app password 
-    "outgoing_server": "smtp.office365.com
-",
-    "outgoing_port": 587,
-    "tls": true
+    "to": "<recepient-email>",                       // email of whom will receive the email
+    "outgoing_server": "<smtp-server>",
+    "outgoing_port": 587
 }
