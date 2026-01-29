@@ -33,8 +33,6 @@ if len(phrases) == 1:
  
 This is the last phrase of the file. Generate a new version of the file,
 otherwise this program will fail next time.
-    """
-
 # try sending an email
 msg = EmailMessage()
 msg["Subject"] = "Test Email"
@@ -47,3 +45,5 @@ with smtplib.SMTP(auth["outgoing_server"], auth["outgoing_port"]) as server:
     server.starttls()
     server.login(auth["email"], auth["password"])
     server.send_message(msg)
+"""
+
