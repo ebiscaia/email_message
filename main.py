@@ -47,3 +47,5 @@ with smtplib.SMTP(auth["outgoing_server"], auth["outgoing_port"]) as server:
     server.send_message(msg)
 """
 
+# Update lines array without the sent phrase (index+1 because of header)
+lines.pop(index + 1)
