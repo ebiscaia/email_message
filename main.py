@@ -20,6 +20,7 @@ phrases = lines[1:]
 
 # Get a random phrase and separate the original part and its translation
 phrase = phrases[random.randint(0, len(phrases) - 1)].split("|")
+index = random.randint(0, len(phrases) - 1)
 
 # Build the message
 message = f"""Phrase of the day
