@@ -33,6 +33,8 @@ if len(phrases) == 1:
  
 This is the last phrase of the file. Generate a new version of the file,
 otherwise this program will fail next time.
+"""
+
 # try sending an email
 msg = EmailMessage()
 msg["Subject"] = "Test Email"
@@ -45,7 +47,6 @@ with smtplib.SMTP(auth["outgoing_server"], auth["outgoing_port"]) as server:
     server.starttls()
     server.login(auth["email"], auth["password"])
     server.send_message(msg)
-"""
 
 # Update lines array without the sent phrase (index+1 because of header)
 lines.pop(index + 1)
@@ -54,4 +55,3 @@ linesString = "\n".join(lines)
 # Overwrite the file
 with open("phrases.txt", "w") as f:
     f.write(linesString)
-
