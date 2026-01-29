@@ -37,20 +37,18 @@ else:
     otherwise this program will fail next time.
     """
 
-        # try sending an email
-        msg = EmailMessage()
-        msg["Subject"] = "Test Email"
-        msg["From"] = auth["email"]
-        msg["To"] = auth["to"]
-        msg.set_content(message)
+    # try sending an email
+    msg = EmailMessage()
+    msg["Subject"] = "Test Email"
+    msg["From"] = auth["email"]
+    msg["To"] = auth["to"]
+    msg.set_content(message)
 
-        # Send the email securely (works with iCloud and Gmail):
-        with smtplib.SMTP(
-            auth["outgoing_server"], auth["outgoing_port"]
-        ) as server:
-            server.starttls()
-            server.login(auth["email"], auth["password"])
-            server.send_message(msg)
+    # Send the email securely (works with iCloud and Gmail):
+    with smtplib.SMTP(auth["outgoing_server"], auth["outgoing_port"]) as server:
+        server.starttls()
+        server.login(auth["email"], auth["password"])
+        server.send_message(msg)
 
     # Update lines array without the sent phrase (index+1 because of header)
     lines.pop(index + 1)
