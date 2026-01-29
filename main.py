@@ -60,5 +60,8 @@ else:
         linesString = "\n".join(lines)
 
         # Overwrite the file
-        with open("phrases.txt", "w") as f:
-            f.write(linesString)
+        try:
+            with open("phrases.txt", "w") as f:
+                f.write(linesString)
+        except Exception as e:
+            print(f"Error: {e}")
