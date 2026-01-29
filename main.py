@@ -49,3 +49,5 @@ with smtplib.SMTP(auth["outgoing_server"], auth["outgoing_port"]) as server:
 
 # Update lines array without the sent phrase (index+1 because of header)
 lines.pop(index + 1)
+linesString = "\n".join(lines)
+
