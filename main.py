@@ -51,8 +51,6 @@ else:
             server.starttls()
             server.login(auth["email"], auth["password"])
             server.send_message(msg)
-    except Exception as e:
-        print(f"Error: {e}")
     else:
         # Update lines array without the sent phrase (index+1 because of header)
         lines.pop(index + 1)
