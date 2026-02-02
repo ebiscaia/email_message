@@ -45,18 +45,18 @@ else:
     msg.set_content(message)
 
     # Send the email securely (works with iCloud and Gmail):
-        with smtplib.SMTP(
-            auth["outgoing_server"], auth["outgoing_port"]
-        ) as server:
-            server.starttls()
-            server.login(auth["email"], auth["password"])
-            server.send_message(msg)
-        # Update lines array without the sent phrase (index+1 because of header)
-        lines.pop(index + 1)
-        linesString = "\n".join(lines)
+    with smtplib.SMTP(
+        auth["outgoing_server"], auth["outgoing_port"]
+    ) as server:
+        server.starttls()
+        server.login(auth["email"], auth["password"])
+        server.send_message(msg)
+    # Update lines array without the sent phrase (index+1 because of header)
+    lines.pop(index + 1)
+    linesString = "\n".join(lines)
 
-        # Overwrite the file
-        with open("phrases.txt", "w") as f:
-            f.write(linesString)
-        except Exception as e:
-            print(f"Error: {e}")
+    # Overwrite the file
+    with open("phrases.txt", "w") as f:
+        f.write(linesString)
+    except Exception as e:
+        print(f"Error: {e}")
