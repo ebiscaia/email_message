@@ -45,7 +45,6 @@ else:
     msg.set_content(message)
 
     # Send the email securely (works with iCloud and Gmail):
-    try:
         with smtplib.SMTP(
             auth["outgoing_server"], auth["outgoing_port"]
         ) as server:
