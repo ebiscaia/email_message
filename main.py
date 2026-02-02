@@ -51,7 +51,6 @@ else:
             server.starttls()
             server.login(auth["email"], auth["password"])
             server.send_message(msg)
-    else:
         # Update lines array without the sent phrase (index+1 because of header)
         lines.pop(index + 1)
         linesString = "\n".join(lines)
