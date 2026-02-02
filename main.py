@@ -12,10 +12,7 @@ try:
     with open(PHRASE_FILE) as f, open(AUTH_FILE) as af:
         lines = f.read().splitlines()
         auth = json.load(af)
-except Exception as e:
-    print(f"Error: {e}")
 
-else:
     # Associate the lines of the PHRASE_FILE to variables of languages and phrases
     languages = lines[0].split("|")
     phrases = lines[1:]
@@ -58,5 +55,5 @@ else:
     # Overwrite the file
     with open("phrases.txt", "w") as f:
         f.write(linesString)
-    except Exception as e:
-        print(f"Error: {e}")
+except Exception as e:
+    print(f"Error: {e}")
