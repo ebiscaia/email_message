@@ -17,6 +17,11 @@ try:
     languages = lines[0].split("|")
     phrases = lines[1:]
 
+    # Check whether there any phrases to be sent
+    if not phrases:
+        print("There are no phrases to be sent. Stopping program.")
+        exit(1)
+
     # Get a random phrase and separate the original part and its translation
     index = random.randint(0, len(phrases) - 1)
     phrase = phrases[index].split("|")
