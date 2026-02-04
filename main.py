@@ -18,6 +18,7 @@ try:
     phrases = lines[1:]
 
     if not phrases:
+        print("There are no phrases to be sent. Stopping program.")
         exit(1)
 
     # Get a random phrase and separate the original part and its translation
