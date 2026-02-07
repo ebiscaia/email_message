@@ -5,6 +5,14 @@ import random
 
 from email.message import EmailMessage
 
+# Set the logging system up
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="{asctime}:{levelname}:{message}",
+    datefmt="%d/%m/%Y %H:%M:%S",
+    style="{",
+)
+
 PHRASE_FILE = "phrases.txt"
 AUTH_FILE = "auth.json"
 message = ""
