@@ -27,6 +27,7 @@ try:
         lines = f.read().splitlines()
 
     logging.debug(f"File {PHRASE_FILE} read.")
+
     # Associate the lines of the PHRASE_FILE to variables of languages and phrases
     languages = lines[0].split("|")
     phrases = lines[1:]
@@ -48,7 +49,7 @@ try:
     # Check the lenght of phrases array and add a warning to the main message
     if len(phrases) == 1:
         message += """
-     
+
     This is the last phrase of the file. Generate a new version of the file,
     otherwise this program will fail next time.
     """
