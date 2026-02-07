@@ -1,17 +1,32 @@
 import json
 import smtplib
 import random
+import logging
 
 from email.message import EmailMessage
+
+# Setting the logging system up
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="{asctime}:{levelname}: {message}",
+    style="{",
+    datefmt="%d/%m/%Y %H:%M",
+)
 
 PHRASE_FILE = "phrases.txt"
 AUTH_FILE = "auth.json"
 message = ""
 
 try:
-    with open(PHRASE_FILE) as f, open(AUTH_FILE) as af:
-        lines = f.read().splitlines()
+    with open(AUTH_FILE) as af:
         auth = json.load(af)
+
+    logging.debug(f"File {AUTH_FILE} read.")
+
+    with open(PHRASE_FILE) as f:
+        lines = f.read().splitlines()
+
+    logging.debug(f"File {PHRASE_FILE} read.")
 
     # Associate the lines of the PHRASE_FILE to variables of languages and phrases
     languages = lines[0].split("|")
@@ -34,7 +49,7 @@ try:
     # Check the lenght of phrases array and add a warning to the main message
     if len(phrases) == 1:
         message += """
-     
+
     This is the last phrase of the file. Generate a new version of the file,
     otherwise this program will fail next time.
     """
@@ -59,4 +74,4 @@ try:
     with open("phrases.txt", "w") as f:
         f.write(linesString)
 except Exception as e:
-    print(f"Error: {e}")
+    logging.error(f"Error: {e}.")
