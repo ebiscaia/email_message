@@ -8,8 +8,8 @@ from email.message import EmailMessage
 # Set the logging system up
 logging.basicConfig(
     level=logging.DEBUG,
-    format="{asctime}:{levelname}:{message}",
     datefmt="%d/%m/%Y %H:%M:%S",
+    format="{asctime}:{levelname}:{message}",
     style="{",
 )
 
@@ -18,9 +18,12 @@ AUTH_FILE = "auth.json"
 message = ""
 
 try:
-    with open(PHRASE_FILE) as f, open(AUTH_FILE) as af:
-        lines = f.read().splitlines()
+    with open(AUTH_FILE) as af, open(PHRASE_FILE) as f:
         auth = json.load(af)
+        lines = f.read().splitlines()
+
+    for file in [AUTH_FILE, PHRASE_FILE]:
+        logging.debug(f"File {file} read.")
 
     # Associate the lines of the PHRASE_FILE to variables of languages and phrases
     languages = lines[0].split("|")
@@ -43,7 +46,7 @@ try:
     # Check the lenght of phrases array and add a warning to the main message
     if len(phrases) == 1:
         message += """
-     
+
     This is the last phrase of the file. Generate a new version of the file,
     otherwise this program will fail next time.
     """
@@ -68,4 +71,4 @@ try:
     with open("phrases.txt", "w") as f:
         f.write(linesString)
 except Exception as e:
-    print(f"Error: {e}")
+    logging.error(f"Error: {e}.")
