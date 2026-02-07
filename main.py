@@ -73,4 +73,4 @@ try:
     with open("phrases.txt", "w") as f:
         f.write(linesString)
 except Exception as e:
-    print(f"Error: {e}")
+    logging.error(f"Error: {e}.")
