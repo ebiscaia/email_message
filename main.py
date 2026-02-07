@@ -21,6 +21,8 @@ try:
     with open(AUTH_FILE) as af:
         auth = json.load(af)
 
+    logging.debug(f"File {AUTH_FILE} read.")
+
     with open(PHRASE_FILE) as f:
         lines = f.read().splitlines()
 
