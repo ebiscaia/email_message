@@ -18,10 +18,13 @@ AUTH_FILE = "auth.json"
 message = ""
 
 try:
-    with open(PHRASE_FILE) as f, open(AUTH_FILE) as af:
-        lines = f.read().splitlines()
+    with open(AUTH_FILE) as af:
         auth = json.load(af)
 
+    with open(PHRASE_FILE) as f:
+        lines = f.read().splitlines()
+
+    logging.debug(f"File {PHRASE_FILE} read.")
     # Associate the lines of the PHRASE_FILE to variables of languages and phrases
     languages = lines[0].split("|")
     phrases = lines[1:]
