@@ -5,6 +5,14 @@ import logging
 
 from email.message import EmailMessage
 
+# Setting the logging system up
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="{asctime}:{levelname}: {message}",
+    style="{",
+    datefmt="%d/%m/%Y %H:%M",
+)
+
 PHRASE_FILE = "phrases.txt"
 AUTH_FILE = "auth.json"
 message = ""
