@@ -1,2 +1,4 @@
 __pycache__/
-auth.json
+**/auth.json
+files/phrases.txt
+**/*.log
