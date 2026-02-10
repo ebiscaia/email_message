@@ -2,25 +2,38 @@
 :source-highlighter: rouge
 :icons: font
 
-
+== Intro
 This program is to help second language speakers to get some content every day.
 The ideal is to ask a LLM to write a bunch of phrases in the language to learn
-and to translate it to learner's mother tongue.
+and to translate it to learner's mother tongue, create a heading with the
+languages that will used, then save the file as `phrases.txt` in the `files`
+folder.
 
-The file *must* have the following structure:
+The file `phrases.txt` *must* have the following structure:
 
- Language 1|Language 2
- Phrase 1|Translation 1
- Phrase 2|Translation 2
+[source]
+----
+Language 1|Language 2
+Phrase 1|Translation 1
+Phrase 2|Translation 2
+----
 
 What to observe:
 
 * A heading indicating in which languages the phrases are: first the language to
   learn and to which language the sentences are being translated to. Examples:
   
+[source]
+----
 Portuguese|English
+----
 
+or 
+
+[source]
+----
 PT|EN
+----
 
 * From the second line on, the phrases and their corresponding translations.
 
@@ -32,7 +45,8 @@ PT|EN
 
 * First, clone this repository
 * Second, rename the `auth.json.example` file to `auth.json`
-* Modify the `auth.json` adding your email details
+* Modify the `auth.json` adding your email details and instructions in the
+  file.
 
 [WARNING]
 ====
@@ -42,7 +56,8 @@ whether this will work with other services. Suggestions are welcome.
 
 [CAUTION]
 ====
-The password to be used is the app-specific one and not the email password.
+The password to be used is the app-specific password and not the email password
+(the one normally used in the log in screen).
 Instructions for the services:
 
 https://support.apple.com/en-au/102654[iCloud]
