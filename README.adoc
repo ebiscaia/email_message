@@ -107,7 +107,8 @@ frequency. The following cron job will run the job every day at 3:00AM:
 This program deletes the phrase sent every time is run. If you are running the
 program to test it, please keep a copy of the `phrases.txt` somewhere else and
 then overwrite the file before putting it in production.
-When in production, when the program reaches the last sentence, a warning
+
+When the program reaches the last sentence, a warning
 message will be added to the email so that the user can take action before the
 next program execution.
 ====
