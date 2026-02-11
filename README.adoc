@@ -65,6 +65,49 @@ https://support.apple.com/en-au/102654[iCloud]
 https://support.google.com/accounts/answer/185833?hl=en[Google]
 ====
 
-* Create inside the `files` folder the phrases.txt file following the
+* Create inside the `files` folder the `phrases.txt` file following the
   instructions described in first block.
 
+* Go to the folder where the `main.py` file is located and run:
+
+[source,bash]
+----
+$ python main.py
+----
+
+Logs will be shown and also be saved in `./files/app.log` file.
+
+* If everything went well, turn the `main.py` file into an executable using `chmod` and
+  then make a symbolic link to `/usr/local/bin`, as follows:
+
+[source, bash]
+----
+$ sudo ln -s <path>/main.py /usr/local/bin/
+----
+
+Where `path` refers to the full path where `main.py` is located. From now on
+the program can be executed by:
+
+[source,bash]
+----
+$ main.py
+----
+
+* Finally, create a cron job so that the program will be executed automatically . Use this
+https://crontab.guru/[link] to help to set the cron job with the desired
+frequency. The following cron job will run the job every day at 3:00AM:
+
+[source]
+----
+0 3 * * * main.py
+----
+
+[NOTE]
+====
+This program deletes the phrase sent every time is run. If you are running the
+program to test it, please keep a copy of the `phrases.txt` somewhere else and
+then overwrite the file before putting it in production.
+When in production, when the program reaches the last sentence, a warning
+message will be added to the email so that the user can take action before the
+next program execution.
+====
