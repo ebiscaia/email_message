@@ -3,5 +3,7 @@
 **/pyproject.toml
 .gitignore
 .git
+.dockerignore
+dockerfile
 files/phrases.txt
 files/auth.json
