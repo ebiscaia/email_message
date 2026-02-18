@@ -1,0 +1,7 @@
+**/__pycache__/
+**/*.log
+**/pyproject.toml
+.gitignore
+.git
+files/phrases.txt
+files/auth.json
